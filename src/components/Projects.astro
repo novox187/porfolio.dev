@@ -1,39 +1,60 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Laravel from "./icons/Laravel.astro"
+import React from "./icons/React.astro"
+import Css from "./icons/Css.astro"
+import Js from "./icons/Js.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  LARAVEL: {
+    name: "Laravel_PHP",
+    class: "bg-zinc-800 text-white",
+    icon: Laravel,
+  },
+  REACT: {
+    name: "REACT.js",
+    class: "bg-[#23272F] text-white",
+    icon: React,
   },
   TAILWIND: {
-    name: "Tailwind CSS",
+    name: "Tailwind_CSS",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#003159] text-white",
+    icon: Css,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#003159] text-white",
+    icon: Js,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Secos y Bolones - Restaurante online",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      " Aplicación para la gestión de un restaurante de comida rapida online. Creada desde cero con Laravel, React y Tailwind CSS.",
+    image: "/projects/secosybolones.png",
+    tags: [TAGS.LARAVEL, TAGS.TAILWIND, TAGS.REACT],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Opiti - Paguina informativa ",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Paguina informativa sobre el estudio en Rusia. Creada desde cero con Laravel, HTML, CSS y JavaScript.",
+    image: "/projects/Opiti_escritotio.avif",
+    tags: [TAGS.LARAVEL, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Onix - Pedidos de muebles ",
+    description:
+      "Paguina para un negocio de muebles en Rusia. Creada desde cero con React, HTML, Tailwind y JavaScript.",
+    image: "/projects/onix.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.JAVASCRIPT],
   },
 ]
 ---
