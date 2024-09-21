@@ -10,39 +10,80 @@ import Tailwind from "./icons/Tailwind.astro";
 import Mysql from "./icons/Mysql.astro";
 import React from "./icons/React.astro";
 ---
-<div>
-    <ul class="flex gap-5 text-gray-700 dark:text-gray-300">
-        <li >
-            <PhpIcono class="size-10" />
-        </li>
-        <li>
-            <Js class="size-10" fill="#ffff" />
-        </li>
-        <li>
-            <Laravel class='size-10' />
-          </li>
-        <li>
-            <HtmlIcon class="size-10" fill="#ffff" />
-        </li>
-        <li>
-            <React class='size-10' />
-          </li>
-        <li>
-            <CssIcon class="size-10" fill="#ffff" />
-        </li>
-        <li>
-          <Icon class='size-10' />
-        </li>
-        <li>
-          <Bootstrap class='size-10' />
-        </li>
 
-        <li>
-          <Tailwind class='size-10' />
-        </li>
-        <li>
-          <Mysql class='size-10' />
-        </li>
-
-    </ul>
+<div class="w-full overflow-hidden">
+    <div id="scroll-container" class="flex gap-5 text-gray-700 dark:text-gray-300">
+        <ul class="flex gap-5 items-center">
+            <li><PhpIcono class="size-10" /></li>
+            <li><Js class="size-10" fill="#ffff" /></li>
+            <li><Laravel class='size-10' /></li>
+            <li><HtmlIcon class="size-10" fill="#ffff" /></li>
+            <li><React class='size-10' /></li>
+            <li><CssIcon class="size-10" fill="#ffff" /></li>
+            <li><Icon class='size-10' /></li>
+            <li><Bootstrap class='size-10' /></li>
+            <li><Tailwind class='size-10' /></li>
+            <li><Mysql class='size-10' /></li>
+        </ul>
+    </div>
 </div>
+
+<script>
+    function setupInfiniteScroll() {
+        const container = document.getElementById('scroll-container');
+        if (!container) {
+            console.error('Scroll container not found');
+            return;
+        }
+
+        const content = container.querySelector('ul');
+        if (!content) {
+            console.error('Content not found in scroll container');
+            return;
+        }
+        
+        // Clone the content
+        const clone = content.cloneNode(true);
+        container.appendChild(clone);
+
+        let scrollPosition = 0;
+        const totalWidth = content.offsetWidth;
+        const scrollSpeed = 0.2; // Ajusta este valor para cambiar la velocidad (menor = más lento)
+
+        function scroll() {
+            scrollPosition += scrollSpeed;
+            if (scrollPosition >= totalWidth) {
+                scrollPosition = 0;
+            }
+            if (container instanceof HTMLElement) {
+                container.style.transform = `translateX(${-scrollPosition}px)`;
+            }
+            requestAnimationFrame(scroll);
+        }
+
+        scroll();
+
+        // Pausa la animación cuando el mouse está sobre el contenedor
+        container.addEventListener('mouseenter', () => {
+            if (container instanceof HTMLElement) {
+                container.style.animationPlayState = 'paused';
+            }
+        });
+        container.addEventListener('mouseleave', () => {
+            if (container instanceof HTMLElement) {
+                container.style.animationPlayState = 'running';
+            }
+        });
+    }
+
+    // Run the setup function when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', setupInfiniteScroll);
+</script>
+
+<style>
+    #scroll-container {
+        display: inline-flex;
+        white-space: nowrap;
+        transition: transform 0.05s linear; /* Suaviza el movimiento */
+    }
+</style>
