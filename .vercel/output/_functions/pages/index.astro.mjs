@@ -1,8 +1,6 @@
 /* empty css                                      */
-import { e as createComponent, m as maybeRenderHead, r as renderTemplate, f as createAstro, s as spreadAttributes, h as addAttribute, l as renderSlot, k as renderComponent } from '../chunks/astro/server_CTLYSC-i.mjs';
-import 'kleur/colors';
-import { b as $$Badge, $ as $$Layout, a as $$SectionContainer } from '../chunks/Layout_BelhkDqU.mjs';
-import 'clsx';
+import { e as createComponent, m as maybeRenderHead, r as renderTemplate, f as createAstro, s as spreadAttributes, h as addAttribute, l as renderSlot, k as renderComponent } from '../chunks/astro/server_CQPGC_5c.mjs';
+import { b as $$Badge, $ as $$Layout, a as $$SectionContainer } from '../chunks/Layout_Dlw-sUdR.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 

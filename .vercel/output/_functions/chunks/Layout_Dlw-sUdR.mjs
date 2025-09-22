@@ -1,6 +1,4 @@
-import { e as createComponent, m as maybeRenderHead, l as renderSlot, r as renderTemplate, f as createAstro, h as addAttribute, s as spreadAttributes, n as createTransitionScope, k as renderComponent, o as renderScript, p as renderHead } from './astro/server_CTLYSC-i.mjs';
-import 'kleur/colors';
-import 'clsx';
+import { e as createComponent, m as maybeRenderHead, l as renderSlot, r as renderTemplate, f as createAstro, h as addAttribute, s as spreadAttributes, n as createTransitionScope, k as renderComponent, o as renderScript, p as renderHead } from './astro/server_CQPGC_5c.mjs';
 /* empty css                              */
 
 const $$Badge = createComponent(($$result, $$props, $$slots) => {
