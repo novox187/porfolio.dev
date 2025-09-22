@@ -55,13 +55,14 @@ const PROJECTS = [
       "Paguina para un negocio de muebles en Rusia. Creada desde cero con React, HTML, Tailwind y JavaScript.",
     image: "/projects/onix.png",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+    link: "https://oniix.ru",
   },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags }) => (
+    PROJECTS.map(({ image, title, description, tags, link }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -88,11 +89,21 @@ const PROJECTS = [
         </ul>
 
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+  {/** link button */}
+        <LinkButton
+          href={link}
+          class={`mt-4 ${!link ? 'pointer-events-none opacity-50' : ''}`}
+          disabled={!link}
+        >
+          <Link class="size-4" />
+
+          Ver proyecto
+        </LinkButton>
+      </div>
     </div>
-  </div>
-</article>
-    ))
-  }
+  </article>
+  ))
+}
 </div>
 
 
