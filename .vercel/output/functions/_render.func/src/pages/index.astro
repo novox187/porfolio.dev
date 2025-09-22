@@ -1,0 +1,51 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import AboutMe from "@/components/AboutMe.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
+import TitleSection from "@/components/TitleSection.astro"
+import SkillsIcon from "@/components/icons/Skills.astro"
+import Skills from "@/components/Skills.astro"
+---
+
+<Layout
+  title="Porfolio de Harrison - Desarrollador y Programador Web con ños de experiencia"
+  description="Contrata a Harrison para crear tu aplicación web o paguinas web. Desarrollador Web."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-16">
+
+    <SectionContainer id="proyectos">
+      <TitleSection>
+        <SkillsIcon class="size-10" />
+        Proyectos
+      </TitleSection>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="habilidades">
+      <TitleSection>
+        <CodeIcon class="size-7" />
+        Habilidades
+      </TitleSection>
+   <Skills />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+  </main>
+</Layout>
